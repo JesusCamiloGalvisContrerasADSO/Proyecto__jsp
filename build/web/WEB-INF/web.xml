@@ -3,7 +3,7 @@
     <!-- Declaración del servlet a mantener -->
     <servlet>
         <servlet-name>Controlador</servlet-name>
-        <servlet-class>controlador.Controlador</servlet-class>
+        <servlet-class>controlador.controlador</servlet-class>
     </servlet>
     <!-- Mapeo del servlet a mantener -->
     <servlet>
@@ -18,4 +18,6 @@
         <servlet-name>controlador</servlet-name>
         <url-pattern>/controlador</url-pattern>
     </servlet-mapping>
+    
+    
 </web-app>

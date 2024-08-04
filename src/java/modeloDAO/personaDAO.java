@@ -20,25 +20,25 @@ public class personaDAO implements  CRUD{
     persona p = new persona();
 
     @Override
-    public List listar() {
-        ArrayList<persona> list = new ArrayList<>();
-        String sql = "select * from persona";
-        try {
-            con = cn.getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                persona per = new persona();
-                per.setId(rs.getInt("id"));
-                per.setDni(rs.getString("DNI"));
-                per.setNom(rs.getString("nombre"));
-                list.add(per);
-            }
-        } catch (Exception e) {
-            System.err.println("Error:" + e);
+    public List<persona> listar() {
+    List<persona> list = new ArrayList<>();
+    String sql = "SELECT * FROM persona";
+    try {
+        con = cn.getConnection();
+        ps = con.prepareStatement(sql);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            persona per = new persona();
+            per.setId(rs.getInt("id")); // Asegúrate de que el nombre de columna es correcto
+            per.setDni(rs.getString("DNI")); // Asegúrate de que el nombre de columna es correcto
+            per.setNom(rs.getString("Nombres")); // Asegúrate de que el nombre de columna es correcto
+            list.add(per);
         }
-        return list;
+    } catch (Exception e) {
+        System.err.println("Error al listar personas: " + e);
     }
+    return list;
+}
 
     @Override
     public persona list(int id) {
@@ -47,7 +47,15 @@ public class personaDAO implements  CRUD{
 
     @Override
     public boolean add(persona per) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "insert into persona(DNI, Nombres)values('"+per.getDni()+"','"+per.getNom()+"')";
+        
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     @Override

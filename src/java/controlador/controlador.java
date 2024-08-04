@@ -11,6 +11,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import modelo.persona;
+import modeloDAO.personaDAO;
 
 
 /**
@@ -21,9 +23,10 @@ public class controlador extends HttpServlet {
 
    
     String listar="html/listar.jsp";
-    String add="vistas/";
+    String add="html/add.jsp";
     String edit="";
-    
+    persona p=new persona();
+    personaDAO dao=new personaDAO();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -49,6 +52,15 @@ public class controlador extends HttpServlet {
         String acceso ="";
         String action= request.getParameter("accion");
         if (action.equalsIgnoreCase("listar")) {
+            acceso=listar;
+        }else if (action.equalsIgnoreCase("add")) {
+            acceso=add;
+        }else if (action.equalsIgnoreCase("Agregar")) {
+            String dni=request.getParameter("txtDni");
+            String nom=request.getParameter("txtNom");
+            p.setDni(dni);
+            p.setNom(nom);
+            dao.add(p);
             acceso=listar;
         }
         RequestDispatcher vista=request.getRequestDispatcher(acceso);
