@@ -1,4 +1,15 @@
 
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="modelo.TipoSangre" %>
+<%@ page import="modeloDAO.TipoSangreDAO" %>
+<%@ page import="controlador.controladorTipSan" %>
+<%@ page import="modelo.TipoDocum" %>
+<%@ page import="modeloDAO.TipoDocDAO" %>
+<%@ page import="controlador.ControlTipoDoc" %>
+<%@ page import="controlador.controladorRegistro" %>
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -36,88 +47,71 @@
                   <h1 class="registro__titulo">Registrate para continuar</h1>
                   <hr class="registro__linea">
               </div>
-              <div>
+              <form action="controladorRegistro" method="GET">
                   <div class="registro__input">
                       <p>Nombre:</p>
-                      <input class="input_registro" type="text">
+                      <input class="input_registro" name="txtNom" type="text">
                   </div>
                   <div class="registro__input">
                       <p>Apellido:</p>
-                      <input class="input_registro" type="text">
+                      <input class="input_registro" name="txtApell" type="text">
                   </div>
                   <div class="registro__input">
                       <p>Ingresa tu documento:</p>
-                      <input class="input_registro" type="number">
+                      <input class="input_registro" name="txtNumDoc" type="number">
                   </div>
                   <div class="registro__input">
                     <p>Tipo de documento:</p>
-                          <select class="input_registro" name="" id="">
-                              <option value=""></option>
-                              <option value="">Cedula de ciudadania</option>
-                              <option value="">Tarjeta de identidad</option>
-                              <option value="">Cedula extranjeria</option>
-                          </select>
+                    <select class="input_registro" name="txtTipDoc" id="">
+                        <option value=""></option>
+                        <% 
+                        TipoDocDAO docDao = new TipoDocDAO();
+                        List<TipoDocum> docLista = docDao.listar();
+                        Iterator<TipoDocum> docIter = docLista.iterator();
+                        while (docIter.hasNext()) {
+                            TipoDocum docTipo = docIter.next();
+                        %>
+                            <option value="<%= docTipo.getId() %>"><%= docTipo.getNom() %></option>
+                        <% } %>
+                    </select>
                   </div>
                   <div class="registro__input">
                     <p>Tipo de sangre:</p>
-                          <select class="input_registro" name="" id="">
-                              <option value=""></option>
-                              <option value="">A +</option>
-                              <option value="">O +</option>
-                              <option value="">B +</option>
-                              <option value="">AB +</option>
-                              <option value="">A -</option>
-                              <option value="">O -</option>
-                              <option value="">B -</option>
-                              <option value="">AB -</option>
-                          </select>
+                    <select class="input_registro" name="txtTipSang" id="">
+                        <option value="" disabled="" selected=""></option>
+                        <% 
+                        TipoSangreDAO sangreDao = new TipoSangreDAO();
+                        List<TipoSangre> sangreLista = sangreDao.listar();
+                        Iterator<TipoSangre> sangreIter = sangreLista.iterator();
+                        while (sangreIter.hasNext()) {
+                            TipoSangre sangreTipo = sangreIter.next();
+                        %>
+                            <option value="<%= sangreTipo.getId() %>"><%= sangreTipo.getNom() %></option>
+                        <% } %>
+                    </select>
                   </div>
-                  <!-- <div class="registro__input--seleccion">
-                      <div class=" registro__input--cuadro registro__input">
-                          <p>Tipo de documento:</p>
-                          <select class="input_registro--seleccion" name="" id="">
-                              <option value=""></option>
-                              <option value="">Cedula de ciudadania</option>
-                              <option value="">Tarjeta de identidad</option>
-                              <option value="">Cedula extranjeria</option>
-                          </select>
-                      </div>
-                      <div class="registro__input--cuadro registro__input">
-                          <p>Tipo de sangre:</p>
-                          <select class="input_registro--seleccion" name="" id="">
-                              <option value=""></option>
-                              <option value="">A +</option>
-                              <option value="">O +</option>
-                              <option value="">B +</option>
-                              <option value="">AB +</option>
-                              <option value="">A -</option>
-                              <option value="">O -</option>
-                              <option value="">B -</option>
-                              <option value="">AB -</option>
-                          </select>
-                      </div>
-                  </div> -->
+                  
                   <div class="registro__input">
                       <p>Teléfono:</p>
-                      <input class="input_registro" type="number">
+                      <input class="input_registro" name="txtTel" type="number">
                   </div>
                   <div class="registro__input">
                       <p>Escribe tu contraseña:</p>
-                      <input class="input_registro" type="password">
+                      <input class="input_registro" name="txtContra" type="password">
                   </div>
                   <div class="registro__input">
                       <p>Ingresa tu correo:</p>
-                      <input class="input_registro" type="email">
+                      <input class="input_registro" name="txtCorreo" type="email">
                   </div>
                   <div class="registro__input">
                       <p>Dirección:</p>
-                      <input class="input_registro" type="text">
+                      <input class="input_registro" name="txtDirec" type="text">
                   </div>
                   <div class="registro__input">
                       <p>Ingresa tu fecha de nacimiento:</p>
-                      <input class="input_registro" type="date">
+                      <input class="input_registro" name="txtFechNaci" type="date">
                   </div>
-              </div>
+              </form>
               <div>
                   <a class="boton boton__registro" href="confir_registro.html">Regístrarse</a>
               </div>

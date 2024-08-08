@@ -10,6 +10,18 @@
         <servlet-name>controlador</servlet-name>
         <servlet-class>controlador.controlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controladorTipSan</servlet-name>
+        <servlet-class>controlador.controladorTipSan</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControlTipoDoc</servlet-name>
+        <servlet-class>controlador.ControlTipoDoc</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>controladorRegistro</servlet-name>
+        <servlet-class>controlador.controladorRegistro</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -18,6 +30,16 @@
         <servlet-name>controlador</servlet-name>
         <url-pattern>/controlador</url-pattern>
     </servlet-mapping>
-    
-    
+    <servlet-mapping>
+        <servlet-name>controladorTipSan</servlet-name>
+        <url-pattern>/controladorTipSan</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlTipoDoc</servlet-name>
+        <url-pattern>/ControlTipoDoc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controladorRegistro</servlet-name>
+        <url-pattern>/controladorRegistro</url-pattern>
+    </servlet-mapping>
 </web-app>

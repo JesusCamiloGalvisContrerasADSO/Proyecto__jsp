@@ -1,4 +1,5 @@
 
+
 package modeloDAO;
 
 import config.conexion;
@@ -42,8 +43,23 @@ public class personaDAO implements  CRUD{
 
     @Override
     public persona list(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "SELECT * FROM persona where Id="+id;
+    try {
+        con = cn.getConnection();
+        ps = con.prepareStatement(sql);
+        rs = ps.executeQuery();
+        while (rs.next()) {
+            p.setId(rs.getInt("id")); // Asegúrate de que el nombre de columna es correcto
+            p.setDni(rs.getString("DNI")); // Asegúrate de que el nombre de columna es correcto
+            p.setNom(rs.getString("Nombres")); // Asegúrate de que el nombre de columna es correcto
+            
+        }
+    } catch (Exception e) {
+        System.err.println("Error al listar personas: " + e);
     }
+    return p;
+    }
+    
 
     @Override
     public boolean add(persona per) {
@@ -60,12 +76,26 @@ public class personaDAO implements  CRUD{
 
     @Override
     public boolean edit(persona per) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "update persona set DNI='"+per.getDni()+"',Nombres='"+per.getNom()+"'Where Id="+per.getId();
+        try {
+            con=cn.getConnection();
+            ps=con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     @Override
     public boolean eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql="delete from persona where Id="+id;
+        try {
+            con=cn.getConnection();
+            ps=con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     

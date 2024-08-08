@@ -24,7 +24,7 @@ public class controlador extends HttpServlet {
    
     String listar="html/listar.jsp";
     String add="html/add.jsp";
-    String edit="";
+    String edit="html/edit.jsp";
     persona p=new persona();
     personaDAO dao=new personaDAO();
     
@@ -61,6 +61,23 @@ public class controlador extends HttpServlet {
             p.setDni(dni);
             p.setNom(nom);
             dao.add(p);
+            acceso=listar;
+        } else if(action.equalsIgnoreCase("editar")){
+            request.setAttribute("idper",request.getParameter("id"));
+            acceso=edit;
+        }else if(action.equalsIgnoreCase("Actualizar")){
+            int id = Integer.parseInt(request.getParameter("txtid"));
+            String dni=request.getParameter("txtDni");
+            String nom=request.getParameter("txtNom");
+            p.setId(id);
+            p.setDni(dni);
+            p.setNom(nom);
+            dao.edit(p);
+            acceso=listar;
+        }else if(action.equalsIgnoreCase("eliminar")){
+            int id = Integer.parseInt(request.getParameter("id"));
+            p.setId(id);
+            dao.eliminar(id);
             acceso=listar;
         }
         RequestDispatcher vista=request.getRequestDispatcher(acceso);
