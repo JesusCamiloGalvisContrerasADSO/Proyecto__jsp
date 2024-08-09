@@ -47,71 +47,62 @@
                   <h1 class="registro__titulo">Registrate para continuar</h1>
                   <hr class="registro__linea">
               </div>
-              <form action="controladorRegistro" method="GET">
-                  <div class="registro__input">
-                      <p>Nombre:</p>
-                      <input class="input_registro" name="txtNom" type="text">
-                  </div>
-                  <div class="registro__input">
-                      <p>Apellido:</p>
-                      <input class="input_registro" name="txtApell" type="text">
-                  </div>
-                  <div class="registro__input">
-                      <p>Ingresa tu documento:</p>
-                      <input class="input_registro" name="txtNumDoc" type="number">
-                  </div>
-                  <div class="registro__input">
+              <form action="UsuarioControlador" method="POST">
+                <div class="registro__input">
+                    <p>Nombre:</p>
+                    <input class="input_registro" name="txtNom" type="text">
+                </div>
+                <div class="registro__input">
+                    <p>Apellido:</p>
+                    <input class="input_registro" name="txtApell" type="text">
+                </div>
+                <div class="registro__input">
+                    <p>Ingresa tu documento:</p>
+                    <input class="input_registro" name="txtNumDoc" type="number">
+                </div>
+                <div class="registro__input">
                     <p>Tipo de documento:</p>
-                    <select class="input_registro" name="txtTipDoc" id="">
-                        <option value=""></option>
+                    <select class="input_registro" name="txtTipDoc">
+                        <option value="" disabled selected>Selecciona</option>
                         <% 
                         TipoDocDAO docDao = new TipoDocDAO();
                         List<TipoDocum> docLista = docDao.listar();
-                        Iterator<TipoDocum> docIter = docLista.iterator();
-                        while (docIter.hasNext()) {
-                            TipoDocum docTipo = docIter.next();
+                        for (TipoDocum docTipo : docLista) {
                         %>
                             <option value="<%= docTipo.getId() %>"><%= docTipo.getNom() %></option>
                         <% } %>
                     </select>
-                  </div>
-                  <div class="registro__input">
+                </div>
+                <div class="registro__input">
                     <p>Tipo de sangre:</p>
-                    <select class="input_registro" name="txtTipSang" id="">
-                        <option value="" disabled="" selected=""></option>
+                    <select class="input_registro" name="txtTipSang">
+                        <option value="" disabled selected>Selecciona</option>
                         <% 
                         TipoSangreDAO sangreDao = new TipoSangreDAO();
                         List<TipoSangre> sangreLista = sangreDao.listar();
-                        Iterator<TipoSangre> sangreIter = sangreLista.iterator();
-                        while (sangreIter.hasNext()) {
-                            TipoSangre sangreTipo = sangreIter.next();
+                        for (TipoSangre sangreTipo : sangreLista) {
                         %>
                             <option value="<%= sangreTipo.getId() %>"><%= sangreTipo.getNom() %></option>
                         <% } %>
                     </select>
-                  </div>
-                  
-                  <div class="registro__input">
-                      <p>Teléfono:</p>
-                      <input class="input_registro" name="txtTel" type="number">
-                  </div>
-                  <div class="registro__input">
-                      <p>Escribe tu contraseña:</p>
-                      <input class="input_registro" name="txtContra" type="password">
-                  </div>
-                  <div class="registro__input">
-                      <p>Ingresa tu correo:</p>
-                      <input class="input_registro" name="txtCorreo" type="email">
-                  </div>
-                  <div class="registro__input">
-                      <p>Dirección:</p>
-                      <input class="input_registro" name="txtDirec" type="text">
-                  </div>
-                  <div class="registro__input">
-                      <p>Ingresa tu fecha de nacimiento:</p>
-                      <input class="input_registro" name="txtFechNaci" type="date">
-                  </div>
-              </form>
+                </div>
+                <div class="registro__input">
+                    <p>Teléfono:</p>
+                    <input class="input_registro" name="txtTel" type="number">
+                </div>
+                <div class="registro__input">
+                    <p>Escribe tu contraseña:</p>
+                    <input class="input_registro" name="txtContra" type="password">
+                </div>
+                <div class="registro__input">
+                    <p>Ingresa tu correo:</p>
+                    <input class="input_registro" name="txtCorreo" type="email">
+                </div>
+                <div class="registro__input">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+
               <div>
                   <a class="boton boton__registro" href="confir_registro.html">Regístrarse</a>
               </div>
