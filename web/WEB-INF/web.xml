@@ -30,6 +30,10 @@
         <servlet-name>controlLote</servlet-name>
         <servlet-class>controlador.controlLote</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controladorUsuario</servlet-name>
+        <servlet-class>controlador.controladorUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -57,5 +61,9 @@
     <servlet-mapping>
         <servlet-name>controlLote</servlet-name>
         <url-pattern>/controlLote</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controladorUsuario</servlet-name>
+        <url-pattern>/controladorUsuario</url-pattern>
     </servlet-mapping>
 </web-app>
