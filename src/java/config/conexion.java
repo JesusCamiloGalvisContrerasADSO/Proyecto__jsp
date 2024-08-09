@@ -4,8 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 
-public class conexion {
-    
+public class conexion {    
     Connection con;
     public conexion(){
         try {
@@ -15,9 +14,6 @@ public class conexion {
         } catch (Exception e) {
             System.err.println("Error:"+e);
         }
-    }
-    public static void main(String[] args) {
-        conexion cn=new conexion();
     }
 
     public Connection getConnection() {

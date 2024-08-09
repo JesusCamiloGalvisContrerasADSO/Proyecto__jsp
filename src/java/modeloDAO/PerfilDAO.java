@@ -45,7 +45,6 @@ public class PerfilDAO implements Registro {
         return list;
     }
 
-
     @Override
     public Perfil list(int id) {
         String sql = "SELECT * FROM perfil WHERE id=" + id;
@@ -71,81 +70,66 @@ public class PerfilDAO implements Registro {
         return tipo;
     }
 
-//    @Override
-//    public boolean add(Perfil perfil)  {
-//        String sql = "INSERT INTO perfil (nombre, apellido, telefono, email, direccion, fecha_nacimiento, usuario_id, tipo_doc_id, sangre_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-//        try {
-//            con = cn.getConnection();
-//            ps = con.prepareStatement(sql);
-//            ps.setString(1, perfil.getNombre());
-//            ps.setString(2, perfil.getApellido());
-//            ps.setInt(3, perfil.getTelefono());
-//            ps.setString(4, perfil.getEmail());
-//            ps.setString(5, perfil.getDireccion());
-//             ps.setDate(6, new java.sql.Date(perfil.getFechaNacimiento().getTime()));
-//            ps.setInt(7, perfil.getUsuarioId());
-//            ps.setInt(8, perfil.getTipoDocId());
-//            ps.setInt(9, perfil.getSangreId());
-//            ps.executeUpdate();
-//            return true;
-//        } catch (Exception e) {
-//            System.err.println("Error al agregar tipo de documento: " + e);
-//        }
-//        return false;
-//    }
-//
-//    @Override
-//    public boolean edit(Perfil perfil) {
-//        String sql = "UPDATE perfil SET nombre=?, apellido=?, telefono=?, email=?, direccion=?, fecha_nacimiento=?, usuario_id=?, tipo_doc_id=?, sangre_id=? WHERE id_perfil=?";
-//        try {
-//            con = cn.getConnection();
-//            ps = con.prepareStatement(sql);
-//            ps.setString(1, perfil.getNombre());
-//            ps.setString(2, perfil.getApellido());
-//            ps.setInt(3, perfil.getTelefono());
-//            ps.setString(4, perfil.getEmail());
-//            ps.setString(5, perfil.getDireccion());
-//             ps.setDate(6, new java.sql.Date(perfil.getFechaNacimiento().getTime()));
-//            ps.setInt(7, perfil.getUsuarioId());
-//            ps.setInt(7, perfil.getUsuarioId());
-//            ps.setInt(8, perfil.getTipoDocId());
-//            ps.setInt(9, perfil.getSangreId());
-//            ps.setInt(10, perfil.getIdPerfil());
-//            ps.executeUpdate();
-//            return true;
-//        } catch (Exception e) {
-//            System.err.println("Error al editar tipo de sangre: " + e);
-//        }
-//        return false;
-//    }
-//
-//    @Override
-//    public boolean eliminar(int id) {
-//        String sql = "DELETE FROM perfil WHERE id=" + id;
-//        try {
-//            con = cn.getConnection();
-//            ps = con.prepareStatement(sql);
-//            ps.executeUpdate();
-//            return true;
-//        } catch (Exception e) {
-//            System.err.println("Error al eliminar tipo de documento: " + e);
-//        }
-//        return false;
-//    }
-
     @Override
-    public boolean add(Perfil Tipo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean add(Perfil perfil)  {
+        String sql = "INSERT INTO perfil (nombre, apellido, telefono, email, direccion, fecha_nacimiento, usuario_id, tipo_doc_id, sangre_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, perfil.getNombre());
+            ps.setString(2, perfil.getApellido());
+            ps.setInt(3, perfil.getTelefono());
+            ps.setString(4, perfil.getEmail());
+            ps.setString(5, perfil.getDireccion());
+             ps.setDate(6, new java.sql.Date(perfil.getFechaNacimiento().getTime()));
+            ps.setInt(7, perfil.getUsuarioId());
+            ps.setInt(8, perfil.getTipoDocId());
+            ps.setInt(9, perfil.getSangreId());
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println("Error al agregar tipo de documento: " + e);
+        }
+        return false;
     }
 
     @Override
-    public boolean edit(Perfil Tipo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean edit(Perfil perfil) {
+        String sql = "UPDATE perfil SET nombre=?, apellido=?, telefono=?, email=?, direccion=?, fecha_nacimiento=?, usuario_id=?, tipo_doc_id=?, sangre_id=? WHERE id_perfil=?";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, perfil.getNombre());
+            ps.setString(2, perfil.getApellido());
+            ps.setInt(3, perfil.getTelefono());
+            ps.setString(4, perfil.getEmail());
+            ps.setString(5, perfil.getDireccion());
+             ps.setDate(6, new java.sql.Date(perfil.getFechaNacimiento().getTime()));
+            ps.setInt(7, perfil.getUsuarioId());
+            ps.setInt(7, perfil.getUsuarioId());
+            ps.setInt(8, perfil.getTipoDocId());
+            ps.setInt(9, perfil.getSangreId());
+            ps.setInt(10, perfil.getIdPerfil());
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println("Error al editar tipo de sangre: " + e);
+        }
+        return false;
     }
 
     @Override
     public boolean eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "DELETE FROM perfil WHERE id=" + id;
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println("Error al eliminar tipo de documento: " + e);
+        }
+        return false;
     }
 
 

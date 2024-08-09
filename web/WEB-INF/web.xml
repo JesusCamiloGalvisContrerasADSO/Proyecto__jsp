@@ -22,6 +22,14 @@
         <servlet-name>controladorRegistro</servlet-name>
         <servlet-class>controlador.controladorRegistro</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controladorPerfil</servlet-name>
+        <servlet-class>controlador.controladorPerfil</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>controlLote</servlet-name>
+        <servlet-class>controlador.controlLote</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -41,5 +49,13 @@
     <servlet-mapping>
         <servlet-name>controladorRegistro</servlet-name>
         <url-pattern>/controladorRegistro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controladorPerfil</servlet-name>
+        <url-pattern>/controladorPerfil</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controlLote</servlet-name>
+        <url-pattern>/controlLote</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -25,8 +25,6 @@ public class controladorRegistro extends HttpServlet {
     Usuario usu = new Usuario();
     UsuarioDAO usudao = new UsuarioDAO();
     Perfil per = new Perfil();
-    
-    
     PerfilDAO perdao = new PerfilDAO();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -54,110 +52,109 @@ public class controladorRegistro extends HttpServlet {
 
         if (action.equalsIgnoreCase("listar")) {
             acceso = listar;
-        } 
-//        else if (action.equalsIgnoreCase("add")) {
-//            acceso = add;
-//        } else if (action.equalsIgnoreCase("Agregar")) {
-//            String nom = request.getParameter("txtNom");
-//            String apell = request.getParameter("txtApell");
-//            int numDoc = Integer.parseInt(request.getParameter("txtNumDoc"));
-//            int tipDoc = Integer.parseInt(request.getParameter("txtTipDoc"));  
-//            int tipSang = Integer.parseInt(request.getParameter("txtTipSang"));
-//            int tel = Integer.parseInt(request.getParameter("txtTel"));
-//            String contra = request.getParameter("txtContra");
-//            String correo = request.getParameter("txtCorreo");
-//            String direc = request.getParameter("txtDirec");
-//            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-//            Date fechNaci = null;
-//            try {
-//                fechNaci = formatter.parse(request.getParameter("txtFechNaci"));
-//            } catch (ParseException e) {
-//                e.printStackTrace(); // Maneja el error de parsing según tu necesidad
-//            }
-//            Date fechContrato = new Date(); // Fecha actual
-//
-//            usu.setDocumento(numDoc);
-//            usu.setContrasena(contra);
-//
-//            boolean usuarioAgregado = usudao.add(usu);
-//            if (usuarioAgregado) {
-//                int usuarioId = usudao.getLastInsertedId();
-//                per.setNombre(nom);
-//                per.setApellido(apell);
-//                per.setTelefono(tel);
-//                per.setEmail(correo);
-//                per.setDireccion(direc);
-//                per.setFechaNacimiento(fechNaci);
-//                per.setUsuarioId(usuarioId);
-//                per.setTipoDocId(tipDoc);
-//                per.setSangreId(tipSang);
-//                per.setFechaContrato(fechContrato);
-//
-//                boolean perfilAgregado = perdao.add(per);
-//                if (perfilAgregado) {
-//                    acceso = "registroExitoso.jsp";
-//                } else {
-//                    acceso = "registroError.jsp";
-//                }
-//            } else {
-//                acceso = "registroError.jsp";
-//            }
-//        } else if (action.equalsIgnoreCase("editar")) {
-//            request.setAttribute("idUsuario", request.getParameter("id"));
-//            acceso = edit;
-//        } else if (action.equalsIgnoreCase("Actualizar")) {
-//            int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
-//            String nom = request.getParameter("txtNom");
-//            String apell = request.getParameter("txtApell");
-//            int numDoc = Integer.parseInt(request.getParameter("txtNumDoc"));
-//            int tipDoc = Integer.parseInt(request.getParameter("txtTipDoc"));  
-//            int tipSang = Integer.parseInt(request.getParameter("txtTipSang"));
-//            int tel = Integer.parseInt(request.getParameter("txtTel"));
-//            String contra = request.getParameter("txtContra");
-//            String correo = request.getParameter("txtCorreo");
-//            String direc = request.getParameter("txtDirec");
-//            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-//            Date fechNaci = null;
-//            try {
-//                fechNaci = formatter.parse(request.getParameter("txtFechNaci"));
-//            } catch (ParseException e) {
-//                e.printStackTrace(); // Maneja el error de parsing según tu necesidad
-//            }
-//            Date fechContrato = new Date(); // Fecha actual
-//
-//            // Actualizar usuario
-//            usu.setIdUsuario(idUsuario);
-//            usu.setDocumento(numDoc);
-//            usu.setContrasena(contra);
-//            boolean usuarioActualizado = usudao.edit(usu);
-//
-//            // Actualizar perfil
-//            per.setUsuarioId(idUsuario);
-//            per.setNombre(nom);
-//            per.setApellido(apell);
-//            per.setTelefono(tel);
-//            per.setEmail(correo);
-//            per.setDireccion(direc);
-//            per.setFechaNacimiento(fechNaci);
-//            per.setTipoDocId(tipDoc);
-//            per.setSangreId(tipSang);
-//            per.setFechaContrato(fechContrato);
-//            boolean perfilActualizado = perdao.edit(per);
-//
-//            if (usuarioActualizado && perfilActualizado) {
-//                acceso = listar;
-//            } else {
-//                acceso = "registroError.jsp";
-//            }
-//        } else if (action.equalsIgnoreCase("eliminar")) {
-//            int id = Integer.parseInt(request.getParameter("id"));
-//            per.setIdPerfil(id);
-//            perdao.eliminar(id);
-//            acceso = listar;
-//        }
-//
-//        RequestDispatcher vista = request.getRequestDispatcher(acceso);
-//        vista.forward(request, response);
+        } else if (action.equalsIgnoreCase("add")) {
+            acceso = add;
+        } else if (action.equalsIgnoreCase("Agregar")) {
+            String nom = request.getParameter("txtNom");
+            String apell = request.getParameter("txtApell");
+            int numDoc = Integer.parseInt(request.getParameter("txtNumDoc"));
+            int tipDoc = Integer.parseInt(request.getParameter("txtTipDoc"));  
+            int tipSang = Integer.parseInt(request.getParameter("txtTipSang"));
+            int tel = Integer.parseInt(request.getParameter("txtTel"));
+            String contra = request.getParameter("txtContra");
+            String correo = request.getParameter("txtCorreo");
+            String direc = request.getParameter("txtDirec");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            Date fechNaci = null;
+            try {
+                fechNaci = formatter.parse(request.getParameter("txtFechNaci"));
+            } catch (ParseException e) {
+                e.printStackTrace(); // Maneja el error de parsing según tu necesidad
+            }
+            Date fechContrato = new Date(); // Fecha actual
+
+            usu.setDocumento(numDoc);
+            usu.setContrasena(contra);
+
+            boolean usuarioAgregado = usudao.add(usu);
+            if (usuarioAgregado) {
+                UsuarioDAO usuarioId = usudao;
+                per.setNombre(nom);
+                per.setApellido(apell);
+                per.setTelefono(tel);
+                per.setEmail(correo);
+                per.setDireccion(direc);
+                per.setFechaNacimiento(fechNaci);
+
+                per.setTipoDocId(tipDoc);
+                per.setSangreId(tipSang);
+                per.setFechaContrato(fechContrato);
+
+                boolean perfilAgregado = perdao.add(per);
+                if (perfilAgregado) {
+                    acceso = "registroExitoso.jsp";
+                } else {
+                    acceso = "registroError.jsp";
+                }
+            } else {
+                acceso = "registroError.jsp";
+            }
+        } else if (action.equalsIgnoreCase("editar")) {
+            request.setAttribute("idUsuario", request.getParameter("id"));
+            acceso = edit;
+        } else if (action.equalsIgnoreCase("Actualizar")) {
+            int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+            String nom = request.getParameter("txtNom");
+            String apell = request.getParameter("txtApell");
+            int numDoc = Integer.parseInt(request.getParameter("txtNumDoc"));
+            int tipDoc = Integer.parseInt(request.getParameter("txtTipDoc"));  
+            int tipSang = Integer.parseInt(request.getParameter("txtTipSang"));
+            int tel = Integer.parseInt(request.getParameter("txtTel"));
+            String contra = request.getParameter("txtContra");
+            String correo = request.getParameter("txtCorreo");
+            String direc = request.getParameter("txtDirec");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            Date fechNaci = null;
+            try {
+                fechNaci = formatter.parse(request.getParameter("txtFechNaci"));
+            } catch (ParseException e) {
+                e.printStackTrace(); // Maneja el error de parsing según tu necesidad
+            }
+            Date fechContrato = new Date(); // Fecha actual
+
+            // Actualizar usuario
+            usu.setIdUsuario(idUsuario);
+            usu.setDocumento(numDoc);
+            usu.setContrasena(contra);
+            boolean usuarioActualizado = usudao.edit(usu);
+
+            // Actualizar perfil
+            per.setUsuarioId(idUsuario);
+            per.setNombre(nom);
+            per.setApellido(apell);
+            per.setTelefono(tel);
+            per.setEmail(correo);
+            per.setDireccion(direc);
+            per.setFechaNacimiento(fechNaci);
+            per.setTipoDocId(tipDoc);
+            per.setSangreId(tipSang);
+            per.setFechaContrato(fechContrato);
+            boolean perfilActualizado = perdao.edit(per);
+
+            if (usuarioActualizado && perfilActualizado) {
+                acceso = listar;
+            } else {
+                acceso = "registroError.jsp";
+            }
+        } else if (action.equalsIgnoreCase("eliminar")) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            per.setIdPerfil(id);
+            perdao.eliminar(id);
+            acceso = listar;
+        }
+
+        RequestDispatcher vista = request.getRequestDispatcher(acceso);
+        vista.forward(request, response);
     }
 
     @Override

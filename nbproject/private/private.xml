@@ -3,38 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modeloDAO/TipoDocDAO.java</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/html/Perfil/listar.jsp</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/interfaces/usuario.java</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/interfaces/CRUD.java</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/paginasAcciones.html</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/html/TipoSangre/add.jsp</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modelo/TipoDocum.java</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modeloDAO/LoteDAO.java</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/interfaces/Registro.java</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/interfaces/TipoDoc.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/Recursos/logo-BoviControl.png</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modeloDAO/TipoSangreDAO.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/Recursos/vaquita.png</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modelo/TipoSangre.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modelo/Usuario.java</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/interfaces/perfil.java</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/controlador/controladorRegistro.java</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modeloDAO/PerfilusuarioDAO.java</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/config/conexion.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/html/TipoSangre/edit.jsp</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modelo/Perfil_usuario.java</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modelo/persona.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/css/global.css</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/css/componentes/header.css</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/controlador/controladorTipSan.java</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/html/lote/add.jsp</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modelo/LoteM.java</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modeloDAO/PerfilDAO.java</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modeloDAO/UsuarioDAO.java</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/html/TipoDocum/listar.jsp</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/interfaces/lote.java</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/html/TipoSangre/listar.jsp</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/html/TipoDocum/edit.jsp</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/html/registro/Registro.jsp</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/controlador/controlador.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/css/pages/login.css</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/interfaces/TipSan.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/html/TipoDocum/add.jsp</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/index.html</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/css/style.css</file>
-            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modeloDAO/personaDAO.java</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/html/Usuarios/listar.jsp</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/controlador/controladorPerfil.java</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/controlador/controlLote.java</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/web/html/lote/listar.jsp</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modelo/Perfil.java</file>
+            <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/modeloDAO/personaDAO.java</file>
             <file>file:/C:/Users/hp/OneDrive/Documentos/NetBeansProjects/proyecto/src/java/controlador/ControlTipoDoc.java</file>
         </group>
     </open-files>
